@@ -35,6 +35,13 @@ public class DZ2 {
         System.out.println("Массив:");
         dz2.initialArray(dz2.multiArray);
         dz2.minMaxArray(dz2.multiArray);
+
+        System.out.println("___________________________________");
+        System.out.println("Задание 6**");
+        System.out.print("Массив:  ");
+        dz2.initialArray(dz2.multiArray);
+        System.out.println();
+        System.out.println(dz2.sumleftrightEqually(dz2.multiArray));
     }//end main
 
     public  void initialArray(int[] initArray){
@@ -121,9 +128,8 @@ public class DZ2 {
         initialMultiArray(diagElemArray);
     }//diagonalElements
 
-/* Задать одномерный массив и найти в нем минимальный и максимальный элементы (без помощи интернета);
- */
-public  void minMaxArray(int[] minMaxArr){
+
+    public  void minMaxArray(int[] minMaxArr){
     /* Задать одномерный массив и найти в нем минимальный и максимальный элементы (без помощи интернета);
      */
     int max = minMaxArr[0];
@@ -138,11 +144,23 @@ public  void minMaxArray(int[] minMaxArr){
     System.out.println("Минимум: "+min);
 }//end initialArray
 
-    /*** Написать метод, в который передается не пустой одномерный целочисленный массив,
-     *  метод должен вернуть true, если в массиве есть место, в котором сумма левой и
-     *  правой части массива равны. Примеры: checkBalance([2, 2, 2, 1, 2, 2, || 10, 1]) → true,
-     *  checkBalance([1, 1, 1, || 2, 1]) → true, граница показана символами ||, эти символы в массив не входят.
-     */
+
+    public  boolean sumleftrightEqually(int[] leftRightArr){
+        /*Написать метод, в который передается не пустой одномерный целочисленный массив,
+           метод должен вернуть true, если в массиве есть место, в котором сумма левой и
+          правой части массива равны. Примеры: checkBalance([2, 2, 2, 1, 2, 2, || 10, 1]) → true,
+          checkBalance([1, 1, 1, || 2, 1]) → true, граница показана символами ||, эти символы в массив не входят.
+         */
+         int rSuma, lSuma;
+        for(int i = 0; i < leftRightArr.length; i++){
+            rSuma= 0;  lSuma= 0;
+            for (int j = 0; j < i; j++) { lSuma += leftRightArr[j]; }//end for
+            for (int j = i; j < leftRightArr.length; j++) {rSuma += leftRightArr[j];}//end for
+            if (lSuma == rSuma) return true;//end if
+        }//end for
+        return false;
+    }//end sumleftrightEqually
+
 }//end DZ2
 
 
