@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class DZ2 {
     int[] modiArray = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
     int[] fillArray = new int[8];
-    int[] multiArray ={1,2,3,4,5,6,7,8,9};
+    int[] multiArray ={1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
     int[][] diagElemArray = {{5,7,3,7}, {7,0,2,8}, {8,9,2,9},{8,4,5,6}};
     public static void main(String[] args) {
         DZ2 dz2 = new DZ2();
@@ -42,6 +42,16 @@ public class DZ2 {
         dz2.initialArray(dz2.multiArray);
         System.out.println();
         System.out.println(dz2.sumleftrightEqually(dz2.multiArray));
+
+        System.out.println("___________________________________");
+        System.out.println("Задание 7***");
+        System.out.print("Массив:  ");
+        dz2.initialArray(dz2.multiArray);
+        System.out.println();
+        dz2.shiftArray(dz2.multiArray,5);
+        System.out.println();
+        dz2.shiftArray(dz2.multiArray,-5);
+
     }//end main
 
     public  void initialArray(int[] initArray){
@@ -101,7 +111,7 @@ public class DZ2 {
         System.out.println();
         System.out.print("Массив:");
         for (int i = 0; i < multiArray.length; i++) {
-            if (multiArray[i]>=6){
+            if (multiArray[i]<=6){
                 multiArray[i]=multiArray[i]*2;
                 System.out.print(" "+multiArray[i]);
             }else {
@@ -160,6 +170,36 @@ public class DZ2 {
         }//end for
         return false;
     }//end sumleftrightEqually
+
+     public  void shiftArray(int[] shiftArr, int n){
+        /***** Написать метод, которому на вход подается одномерный массив и число n
+         * (может быть положительным, или отрицательным), при этом метод должен сместить
+         * все элементы массива на n позиций. Для усложнения задачи нельзя пользоваться
+         * вспомогательными массивами.
+         */
+
+         if (n > 0) {
+             for (int x = 0; x < n; x++) {
+                 int buf = shiftArr[shiftArr.length - 1];
+                 if (shiftArr.length - 1 >= 0)
+                     System.arraycopy(shiftArr, 0, shiftArr, 1, shiftArr.length - 1);
+                 shiftArr[0] = buf;
+             }//end for
+         }//end if
+         if (n < 0) {
+             for (int x = 0; x > n; x--) {
+                 int buf = shiftArr[0];
+                 System.arraycopy(shiftArr, 1, shiftArr, 0, shiftArr.length - 1);
+                 shiftArr[shiftArr.length - 1] = buf;
+
+             }//end for
+         }//end if
+         for (int i : shiftArr) System.out.print(i + " ");
+         System.out.println("\r\n");
+
+
+     }//end shiftArray
+
 
 }//end DZ2
 
