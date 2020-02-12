@@ -37,15 +37,15 @@ public class Main {
         System.out.println("_____________________________________");
         System.out.println("Задание 4");
         System.out.println("Введите значение x1");
-        main.x1 = in.nextInt();
+          main.x1 = in.nextInt();
         System.out.println("Введите значение x2");
-        main.x2 = in.nextInt();
+          main.x2 = in.nextInt();
         System.out.println(task10and20(main.x1,main.x2));
 
         System.out.println("_____________________________________");
         System.out.println("Задание 5");
         System.out.println("Введите значение для проверки: ");
-        main.posNeg = in.nextInt();
+          main.posNeg = in.nextInt();
         isPositiveOrNegative(main.posNeg);
 
         System.out.println("_____________________________________");
@@ -64,37 +64,37 @@ public class Main {
         System.out.println("Введите год для проверки: ");
         main.lY = in.nextInt();
         leapYear(main.lY);
-
+        
     }
 
-    public static void greetings(String name) {
+      public static void greetings(String name) {
         /*
         Написать метод, которому в качестве параметра передается строка,
         обозначающая имя. Метод должен вывести в консоль сообщение «Привет, указанное_имя!».
          */
-        System.out.println("Привет "+name+"!");
-    }
+         System.out.println("Привет "+name+"!");
+      }
 
 
-    public static void isPositiveOrNegative(int x) {
+     public static void isPositiveOrNegative(int x) {
         /*Написать метод, которому в качестве параметра передается целое число, метод должен напечатать в консоль,
         положительное ли число передали или отрицательное. Замечание: ноль считаем положительным числом.
          */
         if(x >= 0) {
-            System.out.println("Введено положительное число");
+           System.out.println("Введено положительное число");
         } else {
-            System.out.println("Введено отрицательное число");
+           System.out.println("Введено отрицательное число");
         }
-    }
+     }
 
-    public static boolean isNegative(int x) {
+     public static boolean isNegative(int x) {
         /*Написать метод, которому в качестве параметра передается целое число.
         Метод должен вернуть true, если число отрицательное. */
         if(x<0) {
-            return true;
+           return true;
         }
         return false;
-    }
+     }
     public static void leapYear(int x) {
         /*Написать метод, который определяет, является ли год високосным,
          и выводит сообщение в консоль. Каждый 4-й год является високосным,
@@ -105,17 +105,17 @@ public class Main {
         if (t==0.00){
             float y = (float) (x%400)/400;
             if(y>0.00){
-                System.out.println("Год не висакосный");}
+            System.out.println("Год не висакосный");}
             else {
-                System.out.println("Весокосный");
+            System.out.println("Весокосный");
             }}
         else{ t = (float) (x%4)/4;
-            if (t>0.00){
+                if (t>0.00){
 
-                System.out.println("Год не висакосный");}
-            else {
-                System.out.println("Весокосный");
-            }
+                        System.out.println("Год не висакосный");}
+                    else {
+                        System.out.println("Весокосный");
+                    }
 
         }
 
@@ -128,9 +128,9 @@ public class Main {
 
         float j= a * (b + (c / d));
         return j;
-    }
+     }
 
-    public static boolean task10and20(int x1, int x2) {
+     public static boolean task10and20(int x1, int x2) {
         /*Написать метод, принимающий на вход два целых числа и проверяющий, что их сумма
         лежит в пределах от 10 до 20 (включительно), если да – вернуть true, в противном случае – false.
          */
@@ -138,6 +138,6 @@ public class Main {
 
         return (10<=suma && suma<=20) ? true : false;
 
-    }
+     }
         
 }    
