@@ -64,7 +64,7 @@ public class DZ3 {
         int  guessedNumber =  (int) (Math.random() * words.length);
 
         String enigma = words[guessedNumber];
-       System.out.println(enigma);
+      // System.out.println(enigma);
         while (true){
         System.out.println("Слово загадано отгадай");
         String guess = in.next();
