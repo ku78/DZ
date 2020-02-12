@@ -128,12 +128,12 @@ public class DZ2 {
       и с помощью цикла(-ов) заполнить его диагональные элементы единицами;
      */
         System.out.println();
+        //int a = diagElemArray.length;
         for (int i = 0; i < diagElemArray.length; i++) {
-            for(int j=0; j <diagElemArray[0].length; j++) {
-
-                if (i - j == 0) /*System.out.print(*/diagElemArray[i][j] = 1;
-                // else {System.out.print(diagElemArray[i][j]);}
+            for(int j=0, a = diagElemArray[i].length; j < diagElemArray[i].length; j++,a--) {
+                if (  i==j||i==(a - 1) ) diagElemArray[i][j] = 1;
             }//end for
+            //System.out.print("\r\n");
         }//for
         initialMultiArray(diagElemArray);
     }//diagonalElements
