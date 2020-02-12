@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class DZ2{
 public static void main(String[] args){
-
+    System.out.println();
 }//end main
 
 }//end DZ2
