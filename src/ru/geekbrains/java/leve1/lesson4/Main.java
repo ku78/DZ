@@ -1,14 +1,11 @@
 package ru.geekbrains.java.leve1.lesson4;
-
-
-
 import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
     //задаем размер массива
     final int SIZE_FIELD = 5;// Х
-    final int DOTS_TO_WIN = 5;//Y
+    final int DOTS_TO_WIN = 4;
     //________________________________
     //задаем значение ходов и пустого поля
     final char SIGN_X = 'x';
@@ -75,7 +72,7 @@ public class Main {
             System.out.printf("%-2d%s",(i + 1),"|");//бдля более красивого вывода используем printf
             for (int j = 0; j < SIZE_FIELD; j++) {
                 System.out.printf("%2c",playingField[i][j]);
-                if (i<DOTS_TO_WIN) System.out.printf("%2s","|");// если это не конец массива выводим разделитель
+                if (i<SIZE_FIELD) System.out.printf("%2s","|");// если это не конец массива выводим разделитель
             }
             System.out.println();//"\u203E"
         }
@@ -124,7 +121,7 @@ public class Main {
         int y;
         do {
             x = random.nextInt(SIZE_FIELD);
-            y = random.nextInt(DOTS_TO_WIN );
+            y = random.nextInt(SIZE_FIELD);
         } while (!isCellValid(y, x));
         playingField[y][x]= SIGN_O;// ход компьютера
     }//end turnAI
