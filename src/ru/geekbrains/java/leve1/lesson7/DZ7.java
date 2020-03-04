@@ -36,7 +36,7 @@ public class DZ7 {
                     new Cat("Mursik", 18),
             };
             //и тарелку с едой,
-            Plate plate = new Plate(100);
+            Plate plate = new Plate(70);
             for(Cat itemCat:cats) {
                 itemCat.eat(plate);
                 itemCat.info();

@@ -12,9 +12,12 @@ public class Cat {
     public int getAppetite() {
         return appetite;
     }
+
     public void eat(Plate plate) {
-        System.out.println("Cat " + name + " eat...");
-        plate.decreaseFood(appetite);
+        if (plate.getFood() >= appetite) {
+            System.out.println("Cat " + name + " eat...");
+            //plate.decreaseFood(appetite);
+            fed = plate.decreaseFood(appetite);}
     }
 
     public String getName() {
@@ -23,6 +26,7 @@ public class Cat {
     public void info() {
         System.out.println(name + " " + (fed ? " сыт " : " голоден "));
     }
+
     public void fear(Dog dog){
         System.out.println("Cat "+name+ " fear dog "+ dog.getName());
     }
